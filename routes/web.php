@@ -15,11 +15,6 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});
-*/
-
 Route::get('/', [noticiaController::class, 'index'])->name('admin.noticia.index')->middleware(['auth']);
 
 require __DIR__.'/auth.php';
