@@ -20,7 +20,6 @@ Route::get('/', [noticiaController::class, 'index'])->name('admin.noticia.index'
 require __DIR__.'/auth.php';
 
 route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function(){
-    //route::get('/noticia', [noticiaController::class, 'index'])->name('noticia.index');
     route::any('/noticia/pesquisar', [noticiaController::class, 'pesquisar'])->name('noticia.pesquisar');
     route::get('/noticia/criar', [noticiaController::class, 'criar'])->name('noticia.criar');
     route::post('/noticia/salvar', [noticiaController::class, 'salvar'])->name('noticia.salvar');
